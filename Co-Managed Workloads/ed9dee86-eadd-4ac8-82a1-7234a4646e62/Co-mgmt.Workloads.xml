@@ -1,0 +1,23 @@
+<ActionDescription Class="Group" GroupAsRegion="true" DisplayName="Co-Mgmt Workloads" MnemonicDisplayName="Co-Mgmt Workloads" Description="Shows the co-mgmt workloads of selected device">
+	<ShowOn>
+		<string>ContextMenu</string>  
+	</ShowOn>
+	<ActionGroups>  
+		<ActionDescription Class="Executable" DisplayName="Co-Mgmt Workloads" MnemonicDisplayName="Co-Mgmt Workloads" Description = "Shows the co-mgmt workloads of selected device" RibbonDisplayType="TextAndSmallImage">
+			<ShowOn>
+				<string>ContextMenu</string> <!-- Context Menu -->
+			</ShowOn>
+			<ImagesDescription>
+				<ResourceAssembly>
+					<Assembly>AdminUI.UIResources.dll</Assembly>
+					<Type>Microsoft.ConfigurationManagement.AdminConsole.UIResources.Properties.Resources.resources</Type>
+				</ResourceAssembly>
+				<ImageResourceName>Information</ImageResourceName>
+			</ImagesDescription>
+			<Executable>
+				<FilePath>PowerShell.exe</FilePath>
+				<Parameters>-noninteractive -windowstyle hidden -executionpolicy bypass -File "F:\Co-Managed Workloads\comanagement.workloads.ps1" -SiteServer "##SUB:__SERVER##" -RSRID "##SUB:ResourceID##"</Parameters>
+			</Executable>
+		</ActionDescription>
+	</ActionGroups>
+</ActionDescription>
